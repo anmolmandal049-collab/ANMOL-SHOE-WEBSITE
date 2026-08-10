@@ -1,15 +1,21 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ANMOL SHOE | Footwear Store</title>
+
+    <title>ANMOL SHOE | Quality Footwear</title>
 
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
         }
 
         body {
@@ -32,27 +38,70 @@
             font-weight: bold;
         }
 
+        nav {
+            display: flex;
+            gap: 25px;
+            flex-wrap: wrap;
+        }
+
         nav a {
             color: white;
             text-decoration: none;
-            margin-left: 25px;
+            font-weight: 500;
+        }
+
+        nav a:hover {
+            color: #25D366;
         }
 
         .hero {
-            padding: 80px 8%;
-            background: white;
+            min-height: 520px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             text-align: center;
+            padding: 70px 20px;
+            background: linear-gradient(135deg, #111, #333);
+            color: white;
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            padding: 8px 18px;
+            border: 1px solid white;
+            border-radius: 30px;
+            font-size: 13px;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
         }
 
         .hero h1 {
-            font-size: 55px;
-            margin-bottom: 15px;
+            font-size: 64px;
+            margin: 10px 0;
+            letter-spacing: 3px;
+        }
+
+        .hero h2 {
+            font-size: 30px;
+            margin: 10px 0 20px;
         }
 
         .hero p {
-            font-size: 20px;
-            color: #666;
-            margin-bottom: 30px;
+            font-size: 18px;
+            line-height: 1.7;
+            max-width: 650px;
+            margin: 0 auto 30px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
         }
 
         .btn {
@@ -61,15 +110,31 @@
             color: white;
             padding: 13px 22px;
             text-decoration: none;
-            border-radius: 5px;
+            border-radius: 6px;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+        }
+
+        .hero .btn {
+            background: white;
+            color: #111;
+        }
+
+        .wholesale-btn {
+            background: transparent !important;
+            color: white !important;
+            border: 2px solid white;
         }
 
         .products {
-            padding: 60px 8%;
+            padding: 70px 8%;
             text-align: center;
         }
 
-        .products h2 {
+        .products h2,
+        .about h2,
+        .business h2 {
             font-size: 36px;
             margin-bottom: 40px;
         }
@@ -101,10 +166,33 @@
             font-size: 21px;
         }
 
+        .rating {
+            margin: 8px 0;
+            font-size: 16px;
+        }
+
+        .mrp {
+            color: #777;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+
         .price {
-            font-size: 24px;
+            font-size: 28px;
             font-weight: bold;
-            margin: 12px 0;
+            margin: 8px 0;
+        }
+
+        .discount,
+        .badge {
+            display: inline-block;
+            background: #111;
+            color: white;
+            padding: 6px 12px;
+            border-radius: 5px;
+            font-size: 12px;
+            font-weight: bold;
+            margin-bottom: 15px;
         }
 
         .sizes {
@@ -112,508 +200,331 @@
             margin-bottom: 18px;
         }
 
+        .size-list {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 10px;
+        }
+
+        .size-list span {
+            border: 1px solid #ddd;
+            padding: 7px 12px;
+            border-radius: 6px;
+            background: #fafafa;
+            font-weight: bold;
+            color: #222;
+        }
+
         .whatsapp {
-            background: #25D366;
+            background: #25D366 !important;
+            color: white !important;
         }
 
-        .contact {
-            background: #111;
-            color: white;
+        .about {
+            padding: 70px 8%;
+            background: white;
             text-align: center;
-            padding: 60px 20px;
         }
 
-        .contact h2 {
-            font-size: 35px;
+        .about p {
+            max-width: 750px;
+            margin: 12px auto;
+            font-size: 18px;
+            line-height: 1.7;
+            color: #555;
+        }
+
+        .business {
+            padding: 70px 8%;
+            background: #f5f5f5;
+            text-align: center;
+        }
+
+        .business-container {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .business-card {
+            background: white;
+            width: 350px;
+            padding: 35px;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        .business-card h3 {
+            font-size: 25px;
             margin-bottom: 15px;
         }
 
-        .contact p {
+        .business-card p {
+            color: #666;
+            line-height: 1.6;
             margin-bottom: 25px;
         }
 
-        footer {
-            background: #000;
-            color: #aaa;
+        .contact {
+            padding: 70px 20px;
             text-align: center;
-            padding: 20px;
-       .about {
-    padding: 60px 8%;
-    background: white;
-    text-align: center;
-}
+            background: #fff;
+        }
 
-.about h2 {
-    font-size: 36px;
-    margin-bottom: 25px;
-}
+        .contact h2 {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
 
-.about p {
-    max-width: 750px;
-    margin: 12px auto;
-    font-size: 18px;
-    line-height: 1.7;
-    color: #555;
- }.business {
-    padding: 60px 8%;
-    background: #f5f5f5;
-    text-align: center;
-}
+        .contact > p {
+            color: #666;
+            margin-bottom: 35px;
+        }
 
-.business h2 {
-    font-size: 36px;
-    margin-bottom: 35px;
-}
+        .contact-cards {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
 
-.business-container {
-    display: flex;
-    gap: 30px;
-    justify-content: center;
-    flex-wrap: wrap;
-}
+        .contact-card {
+            width: 240px;
+            min-height: 180px;
+            background: white;
+            padding: 25px 20px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
 
-.business-card {
-    background: white;
-    width: 350px;
-    padding: 35px;
-    border-radius: 12px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-}
+        .contact-icon {
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
 
-.business-card h3 {
-    font-size: 25px;
-    margin-bottom: 15px;
-}
+        .contact-card h3 {
+            margin-bottom: 12px;
+        }
 
-.business-card p {
-    color: #666;
-    line-height: 1.6;
-    margin-bottom: 25px;
-}.badge {
-    display: inline-block;
-    background: #111;
-    color: white;
-    padding: 6px 12px;
-    border-radius: 20px;
-    font-size: 12px;
-    font-weight: bold;
-    margin-bottom: 12px;
-}
+        .contact-card a {
+            display: block;
+            margin: 8px 0;
+            text-decoration: none;
+        }
 
-.rating {
-    margin: 8px 0;
-    font-size: 16px;
-}
+        .contact-card p {
+            margin: 8px 0;
+        }
 
-.size-list {
-    display: flex;
-    justify-content: center;
-    gap: 8px;
-    margin-top: 10px;
-    margin-bottom: 20px;
-}
+        .location-btn {
+            display: inline-block;
+            background: #111;
+            color: white !important;
+            padding: 10px 15px;
+            border-radius: 6px;
+            margin-top: 10px;
+        }
 
-.size-list span {
-    border: 1px solid #ddd;
-    padding: 7px 12px;
-    border-radius: 6px;
-    background: #fafafa;
-    font-weight: bold;
-}.discount {
-    display: inline-block;
-    margin: 5px 0 15px;
-    padding: 5px 10px;
-    background: #111;
-    color: white;
-    border-radius: 5px;
-    font-weight: bold;
-}.mrp {
-    color: #777;
-    font-size: 16px;
-    margin-top: 10px;
-}
+        footer {
+            background: #111;
+            color: white;
+            text-align: center;
+            padding: 45px 20px 25px;
+        }
 
-.price {
-    font-size: 28px;
-    font-weight: bold;
-    margin: 6px 0;
-}
+        footer h2 {
+            font-size: 30px;
+            margin-bottom: 10px;
+        }
 
-.discount {
-    display: inline-block;
-    background: #111;
-    color: white;
-    padding: 5px 10px;
-    border-radius: 5px;
-    font-weight: bold;
-    margin-bottom: 15px;
-}@media (max-width: 768px) {
+        footer p {
+            color: #ccc;
+        }
 
-    header {
-        flex-direction: column;
-        gap: 15px;
-        text-align: center;
-    }
+        .footer-links {
+            margin: 25px 0;
+        }
 
-    .logo {
-        font-size: 24px;
-    }
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            margin: 0 12px;
+        }
 
-    nav {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 10px;
-    }
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
 
-    nav a {
-        margin-left: 0;
-        font-size: 14px;
-    }
+        footer .copyright {
+            border-top: 1px solid #444;
+            padding-top: 20px;
+            margin-top: 25px;
+            font-size: 14px;
+        }
 
-    .hero {
-        padding: 55px 20px;
-    }
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 25px;
+            right: 25px;
+            background: #25D366;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            font-size: 28px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.25);
+            z-index: 999;
+        }
 
-    .hero h1 {
-        font-size: 40px;
-    }
+        .whatsapp-float:hover {
+            transform: scale(1.08);
+        }
 
-    .hero p {
-        font-size: 17px;
-    }
+        @media (max-width: 768px) {
 
-    .products,
-    .about,
-    .business {
-        padding: 45px 20px;
-    }
+            header {
+                flex-direction: column;
+                gap: 15px;
+                text-align: center;
+            }
 
-    .products h2,
-    .about h2,
-    .business h2 {
-        font-size: 30px;
-    }
+            .logo {
+                font-size: 24px;
+            }
 
-    .product {
-        width: 100%;
-        max-width: 350px;
-    }
+            nav {
+                justify-content: center;
+                gap: 12px;
+            }
 
-    .product img {
-        height: 300px;
-    }
+            nav a {
+                font-size: 14px;
+            }
 
-    .business-card {
-        width: 100%;
-        max-width: 350px;
-    }
+            .hero {
+                padding: 55px 20px;
+            }
 
-    .contact {
-        padding: 45px 20px;
-    }
-}.whatsapp-float {
-    position: fixed;
-    width: 60px;
-    height: 60px;
-    bottom: 25px;
-    right: 25px;
-    background: #25D366;
-    color: white;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-    font-size: 28px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.25);
-    z-index: 999;
-}
+            .hero h1 {
+                font-size: 40px;
+            }
 
-.whatsapp-float:hover {
-    transform: scale(1.08);
-}.hero {
-    min-height: 520px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 70px 20px;
-    background: linear-gradient(135deg, #111, #333);
-    color: white;
-}
+            .hero h2 {
+                font-size: 24px;
+            }
 
-.hero-content {
-    max-width: 800px;
-}
+            .hero p {
+                font-size: 17px;
+            }
 
-.hero-badge {
-    display: inline-block;
-    padding: 8px 18px;
-    border: 1px solid #fff;
-    border-radius: 30px;
-    font-size: 13px;
-    letter-spacing: 1px;
-    margin-bottom: 20px;
-}
+            .products,
+            .about,
+            .business {
+                padding: 50px 20px;
+            }
 
-.hero h1 {
-    font-size: 64px;
-    margin: 10px 0;
-    letter-spacing: 3px;
-}
+            .products h2,
+            .about h2,
+            .business h2,
+            .contact h2 {
+                font-size: 30px;
+            }
 
-.hero h2 {
-    font-size: 30px;
-    margin: 10px 0 20px;
-}
+            .product {
+                width: 100%;
+                max-width: 350px;
+            }
 
-.hero p {
-    font-size: 18px;
-    line-height: 1.7;
-    max-width: 650px;
-    margin: 0 auto 30px;
-}
+            .product img {
+                height: 300px;
+            }
 
-.hero-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    flex-wrap: wrap;
-}
-
-.wholesale-btn {
-    background: transparent;
-    border: 2px solid white;
-}.contact {
-    padding: 70px 20px;
-    text-align: center;
-    background: #f7f7f7;
-}
-
-.contact h2 {
-    font-size: 36px;
-    margin-bottom: 10px;
-}
-
-.contact > p {
-    color: #666;
-    margin-bottom: 35px;
-}
-
-.contact-cards {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
-}
-
-.contact-card {
-    width: 240px;
-    min-height: 180px;
-    background: white;
-    padding: 25px 20px;
-    border-radius: 15px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-}
-
-.contact-icon {
-    font-size: 32px;
-    margin-bottom: 10px;
-}
-
-.contact-card h3 {
-    margin-bottom: 12px;
-}
-
-.contact-card a {
-    display: block;
-    margin: 8px 0;
-    text-decoration: none;
-}
-
-.contact-card p {
-    margin: 8px 0;
-}footer {
-    background: #111;
-    color: white;
-    text-align: center;
-    padding: 45px 20px 25px;
-}
-
-footer h2 {
-    font-size: 30px;
-    margin-bottom: 10px;
-}
-
-footer p {
-    color: #ccc;
-}
-
-.footer-links {
-    margin: 25px 0;
-}
-
-.footer-links a {
-    color: white;
-    text-decoration: none;
-    margin: 0 12px;
-}
-
-.footer-links a:hover {
-    text-decoration: underline;
-}
-
-footer .copyright {
-    border-top: 1px solid #444;
-    padding-top: 20px;
-    margin-top: 25px;
-    font-size: 14px;
-}
+            .business-card {
+                width: 100%;
+                max-width: 350px;
+            }
+        }
     </style>
 </head>
-<a
-    href="https://wa.me/919122825987?text=Hello%20ANMOL%20SHOE,%20I%20want%20to%20know%20more%20about%20your%20footwear."
-    class="whatsapp-float"
-    target="_blank"
-    aria-label="Chat on WhatsApp">
-    💬
-</a><footer>
 
-    <h2>ANMOL SHOE</h2>
-
-    <p>
-        Quality Footwear • Stylish Designs • Retail & Wholesale
-    </p>
-
-    <div class="footer-links">
-        <a href="#">Home</a>
-        <a href="#products">Products</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
-    </div>
-
-    <p class="copyright">
-        © 2026 ANMOL SHOE. All Rights Reserved.
-    </p>
-
-</footer>
 <body>
 
-<header>
-    <div class="logo">ANMOL SHOE</div>
+    <!-- HEADER -->
+    <header>
 
-    <nav>
-    <a href="#">Home</a>
-    <a href="#products">Products</a>
-    <a href="#about">About</a>
-    <a href="#business">Retail & Wholesale</a>
-    <a href="#contact">Contact</a>
-</nav>
-</header>
+        <div class="logo">ANMOL SHOE</div>
+
+        <nav>
+            <a href="#">Home</a>
+            <a href="#products">Products</a>
+            <a href="#about">About</a>
+            <a href="#business">Retail & Wholesale</a>
+            <a href="#contact">Contact</a>
+        </nav>
+
+    </header>
 
 
-<section class="hero">
+    <!-- HERO -->
+    <section class="hero">
 
-    <div class="hero-content">
+        <div class="hero-content">
 
-        <div class="hero-badge">
-            QUALITY FOOTWEAR • RETAIL & WHOLESALE
-        </div>
+            <div class="hero-badge">
+                QUALITY FOOTWEAR • RETAIL & WHOLESALE
+            </div>
 
-        <h1>ANMOL SHOE</h1>
+            <h1>ANMOL SHOE</h1>
 
-        <h2>Step Into Style & Comfort</h2>
+            <h2>Step Into Style & Comfort</h2>
 
-        <p>
-            Discover stylish, comfortable and quality footwear
-            for every step of life.
-        </p>
-
-        <div class="hero-buttons">
-
-            <a href="#products" class="btn">
-                🛍️ Shop Collection
-            </a>
-
-            <a href="#business" class="btn wholesale-btn">
-                📦 Wholesale Enquiry
-            </a>
-
-        </div>
-
-    </div>
-
-</section>
-<section class="about" id="about">
-
-    <h2>About ANMOL SHOE</h2>
-
-    <p>
-        Welcome to <strong>ANMOL SHOE</strong> — your trusted footwear store.
-        We offer quality and stylish footwear for everyone.
-    </p>
-
-    <p>
-        We provide footwear for both
-        <strong>Retail & Wholesale</strong> customers.
-    </p>
-
-    <p>
-        Our goal is to provide comfortable, stylish and
-        value-for-money footwear to our customers.
-    </p>
-
-</section>
-<section class="business" id="business">
-
-    <h2>Retail & Wholesale</h2>
-
-    <div class="business-container">
-
-        <div class="business-card">
-            <h3>🛍️ Retail</h3>
             <p>
-                Individual customers के लिए stylish और
-                comfortable footwear.
+                Discover stylish, comfortable and quality footwear
+                for every step of life.
             </p>
 
-            <a href="#products" class="btn">
-                Shop Now
-            </a>
+            <div class="hero-buttons">
+
+                <a href="#products" class="btn">
+                    🛍️ Shop Collection
+                </a>
+
+                <a href="#business" class="btn wholesale-btn">
+                    📦 Wholesale Enquiry
+                </a>
+
+            </div>
+
         </div>
 
-        <div class="business-card">
-            <h3>📦 Wholesale</h3>
-            <p>
-                Retailers और business customers के लिए
-                wholesale footwear enquiries.
-            </p>
+    </section>
 
-            <a
-                href="https://wa.me/919122825987?text=Hello%20ANMOL%20SHOE,%20I%20am%20interested%20in%20wholesale%20footwear."
-                class="btn whatsapp"
-                target="_blank">
-                Wholesale Enquiry
-            </a>
-        </div>
 
+    <!-- PRODUCTS -->
+    <section class="products" id="products">
+
+        <h2>Our Products</h2>
+
+        <div class="product-container">
+
+
+            <!-- PRODUCT 1 -->
+          <!-- PRODUCT 1 -->
+<div class="product">
+
+    <div class="badge">
+        25% OFF
     </div>
 
-</section>
-<section class="products" id="products">
-
-    <h2>Our Products</h2>
-
-    <div class="product-container">
-
-        <!-- PRODUCT 1 -->
-
-        <div class="product">
-
-  <div class="badge">BEST SELLER • 28% OFF</div>
-
-    <img src="images/shoe1.jpg" alt="Sparx Sport Shoe SM1080">
+    <img
+        src="images/shoe1.jpg"
+        alt="Sparx Sport Shoe SM1080">
 
     <h3>Sparx Sport Shoe SM1080</h3>
 
@@ -621,61 +532,16 @@ footer .copyright {
         ⭐⭐⭐⭐⭐
     </div>
 
-   <div class="mrp">
-    MRP: <del>₹1,599</del>
-</div>
-
-<div class="price">
-    ₹1,151
-</div>
-
-<div class="discount">
-    28% OFF
-</div>
-
-    <div class="sizes">
-        <strong>Available Sizes</strong>
-        <div class="size-list">
-            <span>6</span>
-            <span>7</span>
-            <span>8</span>
-            <span>9</span>
-        </div>
-    </div>
-
-    <a
-        href="https://wa.me/919122825987?text=Hello%20ANMOL%20SHOE,%20I%20am%20interested%20in%20Sparx%20Sport%20Shoe%20SM1080."
-        class="btn whatsapp"
-        target="_blank">
-        🟢 Order on WhatsApp
-    </a>
-
-</div>
-
-        <!-- PRODUCT 2 -->
-
-       <div class="product">
-
-    <div class="badge">BEST SELLER • 30% OFF</div>
-
-    <img src="images/shoe2.jpg" alt="Sparx Sport Shoe SM951">
-
-    <h3>Sparx Sport Shoe SM951</h3>
-
-    <div class="rating">
-        ⭐⭐⭐⭐⭐
-    </div>
-
     <div class="mrp">
-        MRP: <del>₹1,999</del>
+        MRP: <del>₹1,599</del>
     </div>
 
     <div class="price">
-        ₹1,399
+        ₹1,199
     </div>
 
     <div class="discount">
-        30% OFF
+        SAVE 25%
     </div>
 
     <div class="sizes">
@@ -690,7 +556,7 @@ footer .copyright {
     </div>
 
     <a
-        href="https://wa.me/919122825987?text=Hello%20ANMOL%20SHOE,%20I%20am%20interested%20in%20Sparx%20Sport%20Shoe%20SM951."
+        href="https://wa.me/919122825987?text=Hello%20ANMOL%20SHOE,%20I%20want%20to%20order%20Sparx%20Sport%20Shoe%20SM1080%20for%20Rs.%201199."
         class="btn whatsapp"
         target="_blank">
         🟢 Order on WhatsApp
@@ -698,66 +564,275 @@ footer .copyright {
 
 </div>
 
-    </div>
 
-</section>
+            <!-- PRODUCT 2 -->
+            <div class="product">
 
+                <div class="badge">
+                    BEST SELLER • 30% OFF
+                </div>
 
-<section class="contact" id="contact">
+                <img
+                    src="images/shoe2.jpg"
+                    alt="Sparx Sport Shoe SM951">
 
-    <h2>Contact ANMOL SHOE</h2>
+                <h3>Sparx Sport Shoe SM951</h3>
 
-    <p>Retail & Wholesale Enquiries</p>
+                <div class="rating">
+                    ⭐⭐⭐⭐⭐
+                </div>
 
-    <div class="contact-cards">
+                <div class="mrp">
+                    MRP: <del>₹1,999</del>
+                </div>
 
-        <div class="contact-card">
-            <div class="contact-icon">📞</div>
-            <h3>Call Us</h3>
-            <a href="tel:9769001221">9769001221</a>
-            <a href="tel:8809596100">8809596100</a>
+                <div class="price">
+                    ₹1,399
+                </div>
+
+                <div class="discount">
+                    30% OFF
+                </div>
+
+                <div class="sizes">
+
+                    <strong>Available Sizes</strong>
+
+                    <div class="size-list">
+                        <span>6</span>
+                        <span>7</span>
+                        <span>8</span>
+                        <span>9</span>
+                    </div>
+
+                </div>
+
+                <a
+                    href="https://wa.me/919122825987?text=Hello%20ANMOL%20SHOE,%20I%20want%20to%20order%20Sparx%20Sport%20Shoe%20SM951."
+                    class="btn whatsapp"
+                    target="_blank">
+
+                    🟢 Order on WhatsApp
+
+                </a>
+
+            </div>
+
         </div>
 
-        <div class="contact-card">
-            <div class="contact-icon">📧</div>
-            <h3>Email Us</h3>
-            <a href="mailto:gulabmandal043@gmail.com">
-                gulabmandal043@gmail.com
-            </a>
-            <a href="mailto:anmolmandal049@gmail.com">
-                anmolmandal049@gmail.com
-            </a>
+    </section>
+
+
+    <!-- ABOUT -->
+    <section class="about" id="about">
+
+        <h2>About ANMOL SHOE</h2>
+
+        <p>
+            Welcome to <strong>ANMOL SHOE</strong> —
+            your trusted footwear store.
+            We offer quality and stylish footwear for everyone.
+        </p>
+
+        <p>
+            We provide footwear for both
+            <strong>Retail & Wholesale</strong> customers.
+        </p>
+
+        <p>
+            Our goal is to provide comfortable, stylish and
+            value-for-money footwear to our customers.
+        </p>
+
+    </section>
+
+
+    <!-- RETAIL & WHOLESALE -->
+    <section class="business" id="business">
+
+        <h2>Retail & Wholesale</h2>
+
+        <div class="business-container">
+
+            <div class="business-card">
+
+                <h3>🛍️ Retail</h3>
+
+                <p>
+                    Individual customers के लिए stylish और
+                    comfortable footwear.
+                </p>
+
+                <a href="#products" class="btn">
+                    Shop Now
+                </a>
+
+            </div>
+
+
+            <div class="business-card">
+
+                <h3>📦 Wholesale</h3>
+
+                <p>
+                    Retailers और business customers के लिए
+                    wholesale footwear enquiries.
+                </p>
+
+                <a
+                    href="https://wa.me/919122825987?text=Hello%20ANMOL%20SHOE,%20I%20am%20interested%20in%20wholesale%20footwear."
+                    class="btn whatsapp"
+                    target="_blank">
+
+                    Wholesale Enquiry
+
+                </a>
+
+            </div>
+
         </div>
 
-        <div class="contact-card">
-            <div class="contact-icon">💬</div>
-            <h3>WhatsApp</h3>
-            <a
-                href="https://wa.me/919122825987"
-                class="btn whatsapp"
-                target="_blank">
-                Chat With Us
-            </a>
+    </section>
+
+
+    <!-- CONTACT -->
+    <section class="contact" id="contact">
+
+        <h2>Contact ANMOL SHOE</h2>
+
+        <p>
+            Retail & Wholesale Enquiries
+        </p>
+
+        <div class="contact-cards">
+
+
+            <!-- CALL -->
+            <div class="contact-card">
+
+                <div class="contact-icon">
+                    📞
+                </div>
+
+                <h3>Call Us</h3>
+
+                <a href="tel:9769001221">
+                    9769001221
+                </a>
+
+                <a href="tel:8809596100">
+                    8809596100
+                </a>
+
+            </div>
+
+
+            <!-- EMAIL -->
+            <div class="contact-card">
+
+                <div class="contact-icon">
+                    📧
+                </div>
+
+                <h3>Email Us</h3>
+
+                <a href="mailto:gulabmandal043@gmail.com">
+                    gulabmandal043@gmail.com
+                </a>
+
+                <a href="mailto:anmolmandal049@gmail.com">
+                    anmolmandal049@gmail.com
+                </a>
+
+            </div>
+
+
+            <!-- WHATSAPP -->
+            <div class="contact-card">
+
+                <div class="contact-icon">
+                    💬
+                </div>
+
+                <h3>WhatsApp</h3>
+
+                <a
+                    href="https://wa.me/919122825987"
+                    class="btn whatsapp"
+                    target="_blank">
+
+                    Chat With Us
+
+                </a>
+
+            </div>
+
+
+            <!-- LOCATION -->
+            <div class="contact-card">
+
+                <div class="contact-icon">
+                    📍
+                </div>
+
+                <h3>Visit Our Store</h3>
+
+                <p>
+                    ANMOL SHOE
+                </p>
+
+                <a
+                    href="https://maps.app.goo.gl/pMYkjiUA6SR3m6Cd6"
+                    target="_blank"
+                    class="location-btn">
+
+                    📍 View Store Location
+
+                </a>
+
+            </div>
+
         </div>
 
-        <div class="contact-card">
-            <div class="contact-icon">📍</div>
-            <h3>Visit Our Store</h3>
-            <p>ANMOL SHOE</p>
-         <a href="https://maps.app.goo.gl/pMYkjiUA6SR3m6Cd6"
-   target="_blank"
-   class="location-btn">
-   📍 View Store Location
-</a>
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer>
+
+        <h2>ANMOL SHOE</h2>
+
+        <p>
+            Quality Footwear • Stylish Designs • Retail & Wholesale
+        </p>
+
+        <div class="footer-links">
+
+            <a href="#">Home</a>
+            <a href="#products">Products</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+
         </div>
 
-    </div>
+        <p class="copyright">
+            © 2026 ANMOL SHOE. All Rights Reserved.
+        </p>
 
-</section><br><br>
+    </footer>
 
-<a
-    href="https://maps.app.goo.gl/pMYkjiUA6SR3m6Cd6"
-    class="btn"
-    target="_blank">
-    📍 Visit Our Store
-</a>
+
+    <!-- FLOATING WHATSAPP -->
+    <a
+        href="https://wa.me/919122825987?text=Hello%20ANMOL%20SHOE,%20I%20want%20to%20know%20more%20about%20your%20footwear."
+        class="whatsapp-float"
+        target="_blank"
+        title="Chat on WhatsApp">
+
+        💬
+
+    </a>
+
+</body>
+</html>
+```

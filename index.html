@@ -216,6 +216,27 @@
             color: #222;
         }
 
+        .select-box {
+            margin: 15px 0;
+        }
+
+        .select-box label {
+            font-weight: bold;
+        }
+
+        .select-box select,
+        .select-box input {
+            padding: 10px;
+            margin: 8px;
+            border-radius: 6px;
+            border: 1px solid #ddd;
+            font-size: 15px;
+        }
+
+        .select-box input {
+            width: 75px;
+        }
+
         .whatsapp {
             background: #25D366 !important;
             color: white !important;
@@ -353,10 +374,6 @@
             margin: 0 12px;
         }
 
-        .footer-links a:hover {
-            text-decoration: underline;
-        }
-
         footer .copyright {
             border-top: 1px solid #444;
             padding-top: 20px;
@@ -380,10 +397,6 @@
             font-size: 28px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.25);
             z-index: 999;
-        }
-
-        .whatsapp-float:hover {
-            transform: scale(1.08);
         }
 
         @media (max-width: 768px) {
@@ -455,383 +468,476 @@
 
 <body>
 
-    <!-- HEADER -->
-    <header>
+<header>
 
-        <div class="logo">ANMOL SHOE</div>
+    <div class="logo">ANMOL SHOE</div>
 
-        <nav>
-            <a href="#">Home</a>
-            <a href="#products">Products</a>
-            <a href="#about">About</a>
-            <a href="#business">Retail & Wholesale</a>
-            <a href="#contact">Contact</a>
-        </nav>
+    <nav>
+        <a href="#">Home</a>
+        <a href="#products">Products</a>
+        <a href="#about">About</a>
+        <a href="#business">Retail & Wholesale</a>
+        <a href="#contact">Contact</a>
+    </nav>
 
-    </header>
+</header>
 
 
-    <!-- HERO -->
-    <section class="hero">
+<section class="hero">
 
-        <div class="hero-content">
+    <div class="hero-content">
 
-            <div class="hero-badge">
-                QUALITY FOOTWEAR • RETAIL & WHOLESALE
+        <div class="hero-badge">
+            QUALITY FOOTWEAR • RETAIL & WHOLESALE
+        </div>
+
+        <h1>ANMOL SHOE</h1>
+
+        <h2>Step Into Style & Comfort</h2>
+
+        <p>
+            Discover stylish, comfortable and quality footwear
+            for every step of life.
+        </p>
+
+        <div class="hero-buttons">
+
+            <a href="#products" class="btn">
+                🛍️ Shop Collection
+            </a>
+
+            <a href="#business" class="btn wholesale-btn">
+                📦 Wholesale Enquiry
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="products" id="products">
+
+    <h2>Our Products</h2>
+
+    <div class="product-container">
+
+
+        <!-- PRODUCT 1 -->
+
+        <div class="product">
+
+            <div class="badge">
+                25% OFF
             </div>
 
-            <h1>ANMOL SHOE</h1>
+            <img
+                src="images/shoe1.jpg"
+                alt="Sparx Sport Shoe SM1080">
 
-            <h2>Step Into Style & Comfort</h2>
+            <h3>Sparx Sport Shoe SM1080</h3>
+
+            <div class="rating">
+                ⭐⭐⭐⭐⭐
+            </div>
+
+            <div class="mrp">
+                MRP: <del>₹1,599</del>
+            </div>
+
+            <div class="price">
+                ₹1,199
+            </div>
+
+            <div class="discount">
+                SAVE 25%
+            </div>
+
+            <div class="sizes">
+
+                <strong>Available Sizes</strong>
+
+                <div class="size-list">
+                    <span>6</span>
+                    <span>7</span>
+                    <span>8</span>
+                    <span>9</span>
+                </div>
+
+            </div>
+
+            <div class="select-box">
+
+                <label>Select Size:</label>
+
+                <select id="size1">
+
+                    <option value="6">Size 6</option>
+                    <option value="7">Size 7</option>
+                    <option value="8">Size 8</option>
+                    <option value="9">Size 9</option>
+
+                </select>
+
+                <br>
+
+                <label>Quantity:</label>
+
+                <input
+                    type="number"
+                    id="qty1"
+                    value="1"
+                    min="1">
+
+            </div>
+
+            <button
+                onclick="orderProduct1()"
+                class="btn whatsapp">
+
+                🟢 Order on WhatsApp
+
+            </button>
+
+        </div>
+
+
+        <!-- PRODUCT 2 -->
+
+        <div class="product">
+
+            <div class="badge">
+                BEST SELLER • 30% OFF
+            </div>
+
+            <img
+                src="images/shoe2.jpg"
+                alt="Sparx Sport Shoe SM951">
+
+            <h3>Sparx Sport Shoe SM951</h3>
+
+            <div class="rating">
+                ⭐⭐⭐⭐⭐
+            </div>
+
+            <div class="mrp">
+                MRP: <del>₹1,999</del>
+            </div>
+
+            <div class="price">
+                ₹1,399
+            </div>
+
+            <div class="discount">
+                SAVE 30%
+            </div>
+
+            <div class="sizes">
+
+                <strong>Available Sizes</strong>
+
+                <div class="size-list">
+                    <span>6</span>
+                    <span>7</span>
+                    <span>8</span>
+                    <span>9</span>
+                </div>
+
+            </div>
+
+            <div class="select-box">
+
+                <label>Select Size:</label>
+
+                <select id="size2">
+
+                    <option value="6">Size 6</option>
+                    <option value="7">Size 7</option>
+                    <option value="8">Size 8</option>
+                    <option value="9">Size 9</option>
+
+                </select>
+
+                <br>
+
+                <label>Quantity:</label>
+
+                <input
+                    type="number"
+                    id="qty2"
+                    value="1"
+                    min="1">
+
+            </div>
+
+            <button
+                onclick="orderProduct2()"
+                class="btn whatsapp">
+
+                🟢 Order on WhatsApp
+
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="about" id="about">
+
+    <h2>About ANMOL SHOE</h2>
+
+    <p>
+        Welcome to <strong>ANMOL SHOE</strong> —
+        your trusted footwear store.
+        We offer quality and stylish footwear for everyone.
+    </p>
+
+    <p>
+        We provide footwear for both
+        <strong>Retail & Wholesale</strong> customers.
+    </p>
+
+    <p>
+        Our goal is to provide comfortable, stylish and
+        value-for-money footwear to our customers.
+    </p>
+
+</section>
+
+
+<section class="business" id="business">
+
+    <h2>Retail & Wholesale</h2>
+
+    <div class="business-container">
+
+        <div class="business-card">
+
+            <h3>🛍️ Retail</h3>
 
             <p>
-                Discover stylish, comfortable and quality footwear
-                for every step of life.
+                Individual customers के लिए stylish और
+                comfortable footwear.
             </p>
 
-            <div class="hero-buttons">
-
-                <a href="#products" class="btn">
-                    🛍️ Shop Collection
-                </a>
-
-                <a href="#business" class="btn wholesale-btn">
-                    📦 Wholesale Enquiry
-                </a>
-
-            </div>
+            <a href="#products" class="btn">
+                Shop Now
+            </a>
 
         </div>
 
-    </section>
 
+        <div class="business-card">
 
-    <!-- PRODUCTS -->
-    <section class="products" id="products">
+            <h3>📦 Wholesale</h3>
 
-        <h2>Our Products</h2>
+            <p>
+                Retailers और business customers के लिए
+                wholesale footwear enquiries.
+            </p>
 
-        <div class="product-container">
+            <a
+                href="https://wa.me/919122825987?text=Hello%20ANMOL%20SHOE,%20I%20am%20interested%20in%20wholesale%20footwear."
+                class="btn whatsapp"
+                target="_blank">
 
+                Wholesale Enquiry
 
-            <!-- PRODUCT 1 -->
-          <!-- PRODUCT 1 -->
-<div class="product">
-
-    <div class="badge">
-        25% OFF
-    </div>
-
-    <img
-        src="images/shoe1.jpg"
-        alt="Sparx Sport Shoe SM1080">
-
-    <h3>Sparx Sport Shoe SM1080</h3>
-
-    <div class="rating">
-        ⭐⭐⭐⭐⭐
-    </div>
-
-    <div class="mrp">
-        MRP: <del>₹1,599</del>
-    </div>
-
-    <div class="price">
-        ₹1,199
-    </div>
-
-    <div class="discount">
-        SAVE 25%
-    </div>
-
-    <div class="sizes">
-        <strong>Available Sizes</strong>
-
-        <div class="size-list">
-            <span>6</span>
-            <span>7</span>
-            <span>8</span>
-            <span>9</span>
-        </div>
-    </div>
-
-    <a
-        href="https://wa.me/919122825987?text=Hello%20ANMOL%20SHOE,%20I%20want%20to%20order%20Sparx%20Sport%20Shoe%20SM1080%20for%20Rs.%201199."
-        class="btn whatsapp"
-        target="_blank">
-        🟢 Order on WhatsApp
-    </a>
-
-</div>
-
-
-            <!-- PRODUCT 2 -->
-            <div class="product">
-
-                <div class="badge">
-                    BEST SELLER • 30% OFF
-                </div>
-
-                <img
-                    src="images/shoe2.jpg"
-                    alt="Sparx Sport Shoe SM951">
-
-                <h3>Sparx Sport Shoe SM951</h3>
-
-                <div class="rating">
-                    ⭐⭐⭐⭐⭐
-                </div>
-
-                <div class="mrp">
-                    MRP: <del>₹1,999</del>
-                </div>
-
-                <div class="price">
-                    ₹1,399
-                </div>
-
-                <div class="discount">
-                    30% OFF
-                </div>
-
-                <div class="sizes">
-
-                    <strong>Available Sizes</strong>
-
-                    <div class="size-list">
-                        <span>6</span>
-                        <span>7</span>
-                        <span>8</span>
-                        <span>9</span>
-                    </div>
-
-                </div>
-
-                <a
-                    href="https://wa.me/919122825987?text=Hello%20ANMOL%20SHOE,%20I%20want%20to%20order%20Sparx%20Sport%20Shoe%20SM951."
-                    class="btn whatsapp"
-                    target="_blank">
-
-                    🟢 Order on WhatsApp
-
-                </a>
-
-            </div>
+            </a>
 
         </div>
 
-    </section>
+    </div>
+
+</section>
 
 
-    <!-- ABOUT -->
-    <section class="about" id="about">
+<section class="contact" id="contact">
 
-        <h2>About ANMOL SHOE</h2>
+    <h2>Contact ANMOL SHOE</h2>
 
-        <p>
-            Welcome to <strong>ANMOL SHOE</strong> —
-            your trusted footwear store.
-            We offer quality and stylish footwear for everyone.
-        </p>
+    <p>
+        Retail & Wholesale Enquiries
+    </p>
 
-        <p>
-            We provide footwear for both
-            <strong>Retail & Wholesale</strong> customers.
-        </p>
-
-        <p>
-            Our goal is to provide comfortable, stylish and
-            value-for-money footwear to our customers.
-        </p>
-
-    </section>
+    <div class="contact-cards">
 
 
-    <!-- RETAIL & WHOLESALE -->
-    <section class="business" id="business">
+        <div class="contact-card">
 
-        <h2>Retail & Wholesale</h2>
-
-        <div class="business-container">
-
-            <div class="business-card">
-
-                <h3>🛍️ Retail</h3>
-
-                <p>
-                    Individual customers के लिए stylish और
-                    comfortable footwear.
-                </p>
-
-                <a href="#products" class="btn">
-                    Shop Now
-                </a>
-
+            <div class="contact-icon">
+                📞
             </div>
 
+            <h3>Call Us</h3>
 
-            <div class="business-card">
+            <a href="tel:9769001221">
+                9769001221
+            </a>
 
-                <h3>📦 Wholesale</h3>
-
-                <p>
-                    Retailers और business customers के लिए
-                    wholesale footwear enquiries.
-                </p>
-
-                <a
-                    href="https://wa.me/919122825987?text=Hello%20ANMOL%20SHOE,%20I%20am%20interested%20in%20wholesale%20footwear."
-                    class="btn whatsapp"
-                    target="_blank">
-
-                    Wholesale Enquiry
-
-                </a>
-
-            </div>
+            <a href="tel:8809596100">
+                8809596100
+            </a>
 
         </div>
 
-    </section>
 
+        <div class="contact-card">
 
-    <!-- CONTACT -->
-    <section class="contact" id="contact">
-
-        <h2>Contact ANMOL SHOE</h2>
-
-        <p>
-            Retail & Wholesale Enquiries
-        </p>
-
-        <div class="contact-cards">
-
-
-            <!-- CALL -->
-            <div class="contact-card">
-
-                <div class="contact-icon">
-                    📞
-                </div>
-
-                <h3>Call Us</h3>
-
-                <a href="tel:9769001221">
-                    9769001221
-                </a>
-
-                <a href="tel:8809596100">
-                    8809596100
-                </a>
-
+            <div class="contact-icon">
+                📧
             </div>
 
+            <h3>Email Us</h3>
 
-            <!-- EMAIL -->
-            <div class="contact-card">
+            <a href="mailto:gulabmandal043@gmail.com">
+                gulabmandal043@gmail.com
+            </a>
 
-                <div class="contact-icon">
-                    📧
-                </div>
-
-                <h3>Email Us</h3>
-
-                <a href="mailto:gulabmandal043@gmail.com">
-                    gulabmandal043@gmail.com
-                </a>
-
-                <a href="mailto:anmolmandal049@gmail.com">
-                    anmolmandal049@gmail.com
-                </a>
-
-            </div>
-
-
-            <!-- WHATSAPP -->
-            <div class="contact-card">
-
-                <div class="contact-icon">
-                    💬
-                </div>
-
-                <h3>WhatsApp</h3>
-
-                <a
-                    href="https://wa.me/919122825987"
-                    class="btn whatsapp"
-                    target="_blank">
-
-                    Chat With Us
-
-                </a>
-
-            </div>
-
-
-            <!-- LOCATION -->
-            <div class="contact-card">
-
-                <div class="contact-icon">
-                    📍
-                </div>
-
-                <h3>Visit Our Store</h3>
-
-                <p>
-                    ANMOL SHOE
-                </p>
-
-                <a
-                    href="https://maps.app.goo.gl/pMYkjiUA6SR3m6Cd6"
-                    target="_blank"
-                    class="location-btn">
-
-                    📍 View Store Location
-
-                </a>
-
-            </div>
+            <a href="mailto:anmolmandal049@gmail.com">
+                anmolmandal049@gmail.com
+            </a>
 
         </div>
 
-    </section>
 
+        <div class="contact-card">
 
-    <!-- FOOTER -->
-    <footer>
+            <div class="contact-icon">
+                💬
+            </div>
 
-        <h2>ANMOL SHOE</h2>
+            <h3>WhatsApp</h3>
 
-        <p>
-            Quality Footwear • Stylish Designs • Retail & Wholesale
-        </p>
+            <a
+                href="https://wa.me/919122825987"
+                class="btn whatsapp"
+                target="_blank">
 
-        <div class="footer-links">
+                Chat With Us
 
-            <a href="#">Home</a>
-            <a href="#products">Products</a>
-            <a href="#about">About</a>
-            <a href="#contact">Contact</a>
+            </a>
 
         </div>
 
-        <p class="copyright">
-            © 2026 ANMOL SHOE. All Rights Reserved.
-        </p>
 
-    </footer>
+        <div class="contact-card">
+
+            <div class="contact-icon">
+                📍
+            </div>
+
+            <h3>Visit Our Store</h3>
+
+            <p>
+                ANMOL SHOE
+            </p>
+
+            <a
+                href="https://maps.app.goo.gl/pMYkjiUA6SR3m6Cd6"
+                target="_blank"
+                class="location-btn">
+
+                📍 View Store Location
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
 
 
-    <!-- FLOATING WHATSAPP -->
-    <a
-        href="https://wa.me/919122825987?text=Hello%20ANMOL%20SHOE,%20I%20want%20to%20know%20more%20about%20your%20footwear."
-        class="whatsapp-float"
-        target="_blank"
-        title="Chat on WhatsApp">
+<footer>
 
-        💬
+    <h2>ANMOL SHOE</h2>
 
-    </a>
+    <p>
+        Quality Footwear • Stylish Designs • Retail & Wholesale
+    </p>
+
+    <div class="footer-links">
+
+        <a href="#">Home</a>
+        <a href="#products">Products</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+
+    </div>
+
+    <p class="copyright">
+        © 2026 ANMOL SHOE. All Rights Reserved.
+    </p>
+
+</footer>
+
+
+<a
+    href="https://wa.me/919122825987?text=Hello%20ANMOL%20SHOE,%20I%20want%20to%20know%20more%20about%20your%20footwear."
+    class="whatsapp-float"
+    target="_blank"
+    title="Chat on WhatsApp">
+
+    💬
+
+</a>
+
+
+<script>
+
+function orderProduct1() {
+
+    const size = document.getElementById("size1").value;
+    const quantity = document.getElementById("qty1").value;
+
+    const message =
+        "Hello ANMOL SHOE,\n\n" +
+        "I want to order:\n" +
+        "Product: Sparx Sport Shoe SM1080\n" +
+        "Size: " + size + "\n" +
+        "Quantity: " + quantity + "\n" +
+        "MRP: ₹1,599\n" +
+        "Sale Price: ₹1,199\n" +
+        "Discount: 25% OFF\n\n" +
+        "Thank you.";
+
+    const whatsappURL =
+        "https://wa.me/919122825987?text=" +
+        encodeURIComponent(message);
+
+    window.open(whatsappURL, "_blank");
+}
+
+
+function orderProduct2() {
+
+    const size = document.getElementById("size2").value;
+    const quantity = document.getElementById("qty2").value;
+
+    const message =
+        "Hello ANMOL SHOE,\n\n" +
+        "I want to order:\n" +
+        "Product: Sparx Sport Shoe SM951\n" +
+        "Size: " + size + "\n" +
+        "Quantity: " + quantity + "\n" +
+        "MRP: ₹1,999\n" +
+        "Sale Price: ₹1,399\n" +
+        "Discount: 30% OFF\n\n" +
+        "Thank you.";
+
+    const whatsappURL =
+        "https://wa.me/919122825987?text=" +
+        encodeURIComponent(message);
+
+    window.open(whatsappURL, "_blank");
+}
+
+</script>
 
 </body>
 </html>
